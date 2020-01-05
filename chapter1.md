@@ -173,7 +173,7 @@ ex() %>%
 
 ex() %>% 
 	check_code(
-    	c("TRUE ?> F?ALSE", "T ?> ? F"),
+    	c("TRUE ?> ?FALSE", "T ?> ?F"),
       missing_msg = "La comparación de valores lógicos no es correcta. `TRUE > ___` es parte de la solución, te toca llenar los `___`. ¡Inténtalo otra vez!")
 
 success_msg("¡Bien hecho! Asegúrate de darle una mirada a la consola para ver si R devuelve los resultados que esperas.")
