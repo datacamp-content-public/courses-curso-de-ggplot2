@@ -1,5 +1,14 @@
-title: Curso de ggplot2
-description: Course description goes here.
+title: R Intermedio
+description: >-
+  Tradución no oficial de Intermediate R, de Filip Schouwenaars.
+
+  R Intermedio es la siguiente parada en tu viaje a dominar el lenguaje de
+  programación R. En este entrenamiento aprenderás acerca de condicionales,
+  bucles, y funciones para reforzar tus propios scrypts en R. Además, harás tu
+  código R más eficiente y legible usando las funciones apply. Finalmente, el
+  capítulo de utilidades te agilizará con expresiones regulares en R,
+  manipulación de estructuras de datos, y de fechas y horas. Este curso te
+  permitirá dar el siguiente paso para avanzar en tu conocimiento general y
+  capacidades en la programación con R.
 programming_language: r
-from: "r-base-prod:v1.0.2"
-#from: "tidyverse-base-prod:v1.0.2"
+from: 'r-base-prod:v1.0.2'
