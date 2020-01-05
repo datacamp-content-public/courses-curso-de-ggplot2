@@ -96,3 +96,86 @@ check_code(
 
 success_msg("¡Asombroso!, Dado que `TRUE` se coerce a `1` tras bambalinas, `TRUE == 1` se evalúa a `TRUE`. Asegúrate de no confundir `==` (comparación) y `=` (asignamiento), `==` es el que se necesita para verificar la igualdad de objetos en R.")
 ```
+
+---
+
+## Mayor que y menor que
+
+```yaml
+type: NormalExercise
+key: bee63a594d
+xp: 100
+```
+
+<!-- Guidelines for contexts: https://instructor-support.datacamp.com/en/articles/2375526-course-coding-exercises. -->
+Además del operador de igualdad, Filip nos presentó los operadores *menor que* y *mayor que*: `<` y `>`. También puedes agregar un signo de igual para expresar *menor o igual que* o *mayor o igual que*, respectivamente. Dale una mirada a las siguientes expresiones en R, todas se evalúan a `FALSE`:
+```
+(1 + 2) > 4
+"dog" < "Cats"
+TRUE <= FALSE
+```
+Recuerda que para comparación de cadenas, R determina la relación *mayor que* basado en el orden alfabético. También, ten en mente que `TRUE` es tratado como `1` por razones aritméticas, y `FALSE` es tratado como `0`. Por lo tanto, `FALSE < TRUE` es `TRUE`.
+
+`@instructions`
+<!-- Guidelines for instructions https://instructor-support.datacamp.com/en/articles/2375526-course-coding-exercises. -->
+Escribe expresiones en R para verificar si:
+- `-6 * 5 + 2` es mayor o igual que `-10 +1`
+- "raining" es menor o igual que "raining dogs"
+- `TRUE` es mayor que `FALSE`
+
+`@hint`
+La respuesta correcta a la segunda instrucción sería:
+
+```
+"raining" <= "raining dogs"
+```
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+# Comparación de valores numéricos
+
+
+# Comparison de cadenas de caracteres
+
+
+# Comparación de valores lógicos
+
+```
+
+`@solution`
+```{r}
+# Comparación de valores numéricos
+-6 * 5 + 2 >= -10 + 1
+
+# Comparison de cadenas de caracteres
+"raining" <= "raining dogs"
+
+# Comparación de valores lógicos
+TRUE > FALSE
+```
+
+`@sct`
+```{r}
+ex() %>% 
+	check_code(
+    	"- ?6 \\* ?5 ?\\+ ?2 ?>= ?-10 ?\\+ ?1",
+    missing_msg = "Dale otra mirada a la comparación de numéricos en tu script. Deberías usar algo como `-6 * 5 + 2 >= ___`; ¿puedes llenar lo que falta'")
+
+ex() %>% 
+	check_code(
+    	'"raining" ?<= ?"raining dogs"',
+    	missing_msg = 'Hay un error en la comparación de cadenas de caracteres. Deberías usar algo como `"raining" <= ___`; ¿puedes llenar lo que falta?')
+
+ex() %>% 
+	check_code(
+    	c("TRUE ?> F?ALSE", "T ?> ? F"),
+      missing_msg = "La comparación de valores lógicos no es correcta. `TRUE > ___` es parte de la solución, te toca llenar los `___`. ¡Inténtalo otra vez!")
+
+success_msg("¡Bien hecho! Asegúrate de darle una mirada a la consola para ver si R devuelve los resultados que esperas.")
+
+```
