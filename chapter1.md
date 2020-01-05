@@ -20,8 +20,6 @@ La forma más básica de comparación es la igualdad. Recapitulemos brevemente s
 TRUE != FALSE
 "Rchitect" != "rchitect"
 ```
-
-Notice from the last expression that R is case sensitive: "R" is not equal to "r". Keep this in mind when solving the exercises in this chapter!
 Observa que en la última expresión R es sensible a mayúsculas: "R" no es igual a "r". ¡Ten esto en mente al resolver ejercicios en este capítulo!
 
 `@instructions`
@@ -61,17 +59,40 @@ En la última instrucción, no necesitas ningún paso adicional para hacer la co
 TRUE == FALSE
 
 # Comparación de valores numéricos
--6*14 != 17-101
+-6 * 14 != 17 - 101
 
 # Comparación de cadenas de caracteres
-"useR"=="user"
+"useR" == "user"
 
 # Comparación de valor lógico con numérico
-TRUE==1
+TRUE == 1
 ```
 
 `@sct`
 ```{r}
 # Examples of good success messages: https://instructor-support.datacamp.com/en/articles/2299773-exercise-success-messages.
+ex() %>% 
+check_code(
+  c("TRUE ?== ?FALSE", "T ?== ?F"), 
+  missing_msg = "Fijate de nuevo en la comparación de valores lógicos. Deberías usar `TRUE == ___`; ¿puedes reemplazar el `___`?",
+drop_comments = TRUE)
+
+ex() %>% 
+check_code(
+  	"-6 ?\\* ?14 ?!= ?17 ?- ?101",
+	missing_msg = "Dale otra mirada a la comparación de valores numéricos (segunda instrucción). Deberías usar `-6 * 14 != ___ - ___`, ¿puedes rellenar las partes que faltan?",
+drop_comments = TRUE)
+
+ex() %>% 
+check_code(
+	'"useR" ?== ?"user"',
+	missing_msg = 'Revisa tu código de comparación de cadenas de caracteres. Debes ver si `"useR"` y `"user"` son iguales (`==`)')
+
+ex() %>% 
+check_code(
+    c("TRUE ?== ?1", "T ?== ?1"),
+  	missing_msg = "¿Comparaste correctamente a `TRUE` con `1` usando el operador de igualdad (`==`)?"
+)
+
 success_msg("¡Asombroso!, Dado que `TRUE` se coerce a `1` tras bambalinas, `TRUE == 1` se evalúa a `TRUE`. Asegúrate de no confundir `==` (comparación) y `=` (asignamiento), `==` es el que se necesita para verificar la igualdad de objetos en R.")
 ```
