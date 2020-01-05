@@ -179,3 +179,87 @@ ex() %>%
 success_msg("¡Bien hecho! Asegúrate de darle una mirada a la consola para ver si R devuelve los resultados que esperas.")
 
 ```
+
+---
+
+## Comparar vectores
+
+```yaml
+type: NormalExercise
+key: fee9b5eafc
+xp: 100
+```
+
+Ya estás al tanto de que R es muy bueno con vectores. Sin tener que cambiar nada en la sintaxis, los operadores relacionales de R también trabajan con vectores.
+
+Retornemos al ejemplo que empezó en el vídeo. Quieres determinar si tu actividad en redes sociales han dado frutos y decides revisar tus resultados para LinkedIn y Facebook. El código de muestra en tu editor de script inicializa los vectores `linkedin` y `facebook`. Cada uno de los vectores contiene el número de vistas que tus perfiles de LinkedIn y Facebook han tenido en los últimos siete días. 
+
+`@instructions`
+Usando operadores relacionales, obtén un resultado lógico, es decir `TRUE` o `FALSE`, para las siguientes preguntas:
+
+- ¿En qué días el número de vistas al perfil de LinkedIn superó las 15?
+- ¿En qué días tu perfil de LinkedIn sólo fue visto 5 veces o menos?
+- ¿En qué días tu perfil de LinkedIn fue más visitado que tu perfil de Facebook?
+
+`@hint`
+Vamos a ayudarte con un ejemplo de comparación. Para ver qué días tu perfil de LinkedIn fue visto más de 10 veces utiliza
+```
+linkedin > 10
+```
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+# Los vectores linkedin y facebook ya han sido creados para ti
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+
+# Días populares
+
+
+# Días silenciosos
+
+
+# Días en que LinkedIn fue más visitado que Facebook
+
+```
+
+`@solution`
+```{r}
+# Los vectores linkedin y facebook ya han sido creados para ti
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+
+# Días populares
+linkedin > 15
+
+# Días silenciosos
+linkedin <= 5
+
+# Días en que LinkedIn fue más visitado que Facebook
+linkedin > facebook
+```
+
+`@sct`
+```{r}
+ex() %>% 
+	check_code(
+    			"linkedin ?> ?15",
+    			missing_msg = "Revisa tu código para encontrar días populares en LinkedIn. Puedes usar `> 15` para ello. Simplemente imprime el resultado")
+
+ex() %>% 
+	check_code(
+    			"linkedin ?<= ?5",
+    			missing_msg = "Revisa tu código para encontrar días silenciosos en LinkedIn. Puedes usar `<= 5` para ello. Asegúrate de usar el operador relacional adecuado e imprime el resultado.")
+
+ex() %>% 
+	check_code(
+    			"linkedin ?> ?facebook",
+    			missing_msg = "¿Resolviste correctamente la última instrucción? Simplemente combina `linkedin` y `facebook` con `>` para así obtener `TRUE` o `FALSE` para cada día; `TRUE` si tu perfil de LinkedIn obtuvo más visitas que tu perfil de Facebook ese día, y `FALSE` si no fue así. Simplemente imprime el resultado.")
+
+success_msg("¡Maravilloso! Dale una mirada a output de la consola, tu perfil de LinkedIn fue bastante popular en el sexto día, pero menos popular en el cuarto y quinto día.")
+```
