@@ -192,7 +192,7 @@ xp: 100
 
 Ya estás al tanto de que R es muy bueno con vectores. Sin tener que cambiar nada en la sintaxis, los operadores relacionales de R también trabajan con vectores.
 
-Retornemos al ejemplo que empezó en el vídeo. Quieres determinar si tu actividad en redes sociales han dado frutos y decides revisar tus resultados para LinkedIn y Facebook. El código de muestra en tu editor de script inicializa los vectores `linkedin` y `facebook`. Cada uno de los vectores contiene el número de vistas que tus perfiles de LinkedIn y Facebook han tenido en los últimos siete días. 
+Retornemos al ejemplo que empezó en el vídeo. Quieres determinar si tu actividad en redes sociales han dado frutos y decides revisar tus resultados para LinkedIn y Facebook. El código de muestra en tu editor de script inicializa los vectores `linkedin` y `facebook`. Cada uno de los vectores contiene el número de vistas que tus perfiles de LinkedIn y Facebook han tenido en los últimos siete días.
 
 `@instructions`
 Usando operadores relacionales, obtén un resultado lógico, es decir `TRUE` o `FALSE`, para las siguientes preguntas:
