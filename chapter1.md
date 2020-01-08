@@ -263,3 +263,75 @@ ex() %>%
 
 success_msg("¡Maravilloso! Dale una mirada a output de la consola, tu perfil de LinkedIn fue bastante popular en el sexto día, pero menos popular en el cuarto y quinto día.")
 ```
+
+---
+
+## Comparar matrices
+
+```yaml
+type: NormalExercise
+key: 63bce01e4c
+xp: 100
+```
+
+La habilidad de trabajar con diferentes tipo de estructuras de datos que tiene R no se termina con los vectores. ¡Las matrices y los operadores relacionales también trabajan juntas perfectamente!
+
+En lugar de vectores (como en el ejercicio anterior), los datos de LinkedIn y Facebook ahora están registrados en una matriz llamada `views`. La primera fila contiene la información de LinkedIn; la segunda tiene la información de Facebook. Los vectores originales `facebook` y `linkedin` también siguen disponibles.
+
+`@instructions`
+Usando los operadores relacionales que has aprendido hasta ahora, intenta descubrir lo siguiente: 
+
+- ¿Cuándo fue que las visitas fueron exactamente iguales a 13? Usa la matriz `views` para retornar una matriz de valores lógicos.
+- ¿En qué días el número de visitas fue menor o igual a 14? Nuevamente, haz que R retorne una matriz lógica.
+
+`@hint`
+Para ver qué días las vistas fueron igual a 13, puedes usar el operador `==`, ¡tal y como hiciste con los vectores!
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+# La data ha sido creada para ti
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+views <- matrix(c(linkedin, facebook), nrow = 2, byrow = TRUE)
+
+# ¿En qué diás las visitas son igual a 13?
+
+
+# ¿Cuándo fueron igual o menor que 14 las visitas?
+
+```
+
+`@solution`
+```{r}
+# La data ha sido creada para ti
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+views <- matrix(c(linkedin, facebook), nrow = 2, byrow = TRUE)
+
+# ¿En qué diás las visitas son igual a 13?
+views == 13
+
+# ¿Cuándo fueron igual o menor que 14 las visitas?
+views <= 14
+```
+
+`@sct`
+```{r}
+ex() %>% 
+	check_code(
+    			"views ?== ?13",
+    			missing_msg = "Dale otra mirada al código que calcula cuándo la matriz `views` equivale a 13. Puedes usar `views == 13`. Asegúrate de imprimir el resultado.")
+
+ex() %>% 
+	check_code(
+    			"views <= 14",
+    			missing_msg = "Dale otra mirada a la segunda instrucción. ¿Estás usando el operador `<=`? Simplemente imprime el resultado.")
+
+success_msg("¡Buen trabajo! Con este ejercicio concluye la parte de comparadores. Ahora que saber consultar la reación entre objetos en R, el siguiente paso será usar los resultados para alterar el comportamiento de tus programas. ¡Descúbre todo acerca de ello en el siguiente vídeo!")
+
+```
