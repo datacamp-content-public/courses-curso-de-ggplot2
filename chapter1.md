@@ -361,3 +361,80 @@ xp: 50
 
 `@projector_key`
 14148a7d67fc4a10dc5c5b94afdc3676
+
+---
+
+## & y |
+
+```yaml
+type: NormalExercise
+key: b8321fe192
+xp: 100
+```
+
+Antes de llegar a los siguientes ejercicios, dale una mirada a las siguientes expresiones en R. Todas ellas evalúan a `TRUE`:
+```
+TRUE & TRUE
+FALSE | TRUE
+5 <= 5 & 2 < 3
+3 < 4 | 7 < 6
+```
+¡Cuidado!: `3 < x < 7` para verificar que `x` se encuentra entre 3 y 7 no funcionará; vas a necesitar `3 < x & x < 7` para ello.
+
+En estos ejercicios, vas a necesitar trabajar con la variable `last`. Esta variable equivale al último valor del vector `linkedin` con el que has trabajado anteriormente. El vector `linkedin` representa el número de visitas que tu perfil de LinkedIn ha tenido en los últimos 7 días, ¿recuerdas? Ambas variables, `linkedin` y `last` ya han sido definidas en el editor.
+
+`@instructions`
+Escribe expresiones en R para resolver las siguientes preguntas respecto a la variable `last`:
+
+- ¿Se encuentra `last` por debajo de 5 o por encima de 10?
+- ¿Se encuentra `last` entre 15 y 20, excluyendo 15 pero incluyendo 20?
+
+`@hint`
+En la última instrucción debes utilizar el operador `&` dos veces.
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+# Las variables linkedin y last han sido definidas para ti
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+last <- tail(linkedin, 1)
+
+# ¿Se encuentra last debajo de 5 o debajo de 10?
+
+
+# ¿Se encuentra last entre 15 (exclusivo) y 20 (inclusivo)?
+
+```
+
+`@solution`
+```{r}
+# Las variables linkedin y last han sido definidas para ti
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+last <- tail(linkedin, 1)
+
+# ¿Se encuentra last debajo de 5 o debajo de 10?
+last < 5 | last > 10
+
+# ¿Se encuentra last entre 15 (exclusivo) y 20 (inclusivo)?
+last > 15 & last<= 20
+```
+
+`@sct`
+```{r}
+ex() %>% 
+check_code(
+			"last ?< ?5 ?| ?last ?> ?10",
+			missing_msg = "En tu código para la primera instrucción, deberías usar `last < 5` y `last > 10`, con el operador o (`|`).")
+
+ex() %>% 
+check_code(
+			"last ?> ?15 ?& ?last ?<= ?20",
+			missing_msg = "En tu código para la segunda instrucción, debes usar `last > 15` y `last <= 20`, con el operador y (`&`).")
+
+success_msg("¡Grandioso! Dale una última mirada a la consola antes de continuar; ¿tienen sentido los resultados de las diferentes expresiones?")
+
+```
