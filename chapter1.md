@@ -3,6 +3,19 @@ title: 'Condicionales y control de flujo'
 description: 'En este capítulo, aprenderás a usar operadores relacionales para comparar objetos en R, y operadores lógicos como "y" y "o" para combinar valores TRUE y FALSE. Además, usarás este conocimiento para construir enunciados condicionales.'
 ---
 
+## Operadores Relacionales
+
+```yaml
+type: VideoExercise
+key: 84f225c714
+xp: 50
+```
+
+`@projector_key`
+d2e4404e3912c58ee0a6f7fd065cd92c
+
+---
+
 ## Igualdad
 
 ```yaml
@@ -335,3 +348,16 @@ ex() %>%
 success_msg("¡Buen trabajo! Con este ejercicio concluye la parte de comparadores. Ahora que saber consultar la reación entre objetos en R, el siguiente paso será usar los resultados para alterar el comportamiento de tus programas. ¡Descúbre todo acerca de ello en el siguiente vídeo!")
 
 ```
+
+---
+
+## Operadores Lógicos
+
+```yaml
+type: VideoExercise
+key: c6bb44ca7f
+xp: 50
+```
+
+`@projector_key`
+14148a7d67fc4a10dc5c5b94afdc3676
